@@ -32,7 +32,21 @@ remote_theme: "mmistakes/minimal-mistakes"
 search: true
 plugins:
   - jekyll-feed
-
+include:
+  - _pages  
+author:
+  name   : "Farah Saeed"
+  avatar : "/assets/images/author.jpg"
+  bio    : "AI Enthusiast"
+  email  : farahsaeedsiddiqi@gmail.com
+  github : FarahSaeed
+  linkedin: farah-s-9b2aa7112
+#  uri    : "http://your-site.com"
+  home   : # null (default), "absolute or relative url to link to author home"
+permalink: /:categories/:title/  
+include:
+  - .htaccess
+  - _pages
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
