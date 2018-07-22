@@ -59,3 +59,15 @@ include:
 #   - vendor/gems/
 #   - vendor/ruby/
 github: [metadata]
+paginate: 5
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      comments: true
+      share: true
+      related: true
