@@ -58,6 +58,10 @@ include:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "farahsaeed-github-io"
 github: [metadata]
 paginate: 5
 defaults:
