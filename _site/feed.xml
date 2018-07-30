@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-24T16:43:50+05:00</updated><id>/</id><title type="html">Farah Saeed</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Farah Saeed</name><email>farahsaeedsiddiqi@gmail.com</email></author><entry><title type="html">Image Classification</title><link href="/ComputerVision/" rel="alternate" type="text/html" title="Image Classification" /><published>2018-07-22T00:00:00+05:00</published><updated>2018-07-22T00:00:00+05:00</updated><id>/imageclassification</id><content type="html" xml:base="/ComputerVision/">&lt;style&gt; 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-07-30T19:04:30+05:00</updated><id>/</id><title type="html">Farah Saeed</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Farah Saeed</name><email>farahsaeedsiddiqi@gmail.com</email></author><entry><title type="html">Image Classification</title><link href="/ComputerVision/" rel="alternate" type="text/html" title="Image Classification" /><published>2018-07-22T00:00:00+05:00</published><updated>2018-07-22T00:00:00+05:00</updated><id>/imageclassification</id><content type="html" xml:base="/ComputerVision/">&lt;style&gt; 
 
 .embed-container {
   position: relative;
@@ -15,9 +15,193 @@
   width: 100%;
   height: 100%;
 }
+
+
+.page__content {
+
+font-size: 70%;
+}
+h4
+{
+font-size: 150%;
+}
+h5
+{
+font-size: 100%;
+}
 &lt;/style&gt;
 
 &lt;div class=&quot;embed-container&quot;&gt;
   &lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/1IzALr7F8JBIUMTMUPOaftwQxJ1R7R3si/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; autoplay=&quot;1&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hi Guys, Hope you’re all doing great.&lt;/p&gt;
+
+&lt;p&gt;Above video shows Image Classification task accomplished using Convolutional Neural Network. In this post, I’ll be going through the entire process I have adopted to accomplish task.&lt;/p&gt;
+
+&lt;h4 id=&quot;goal&quot;&gt;Goal&lt;/h4&gt;
+&lt;p&gt;The Goal is to classify images among the following 5 categories:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Indoor&lt;/li&gt;
+  &lt;li&gt;Outdoor&lt;/li&gt;
+  &lt;li&gt;Night&lt;/li&gt;
+  &lt;li&gt;Day&lt;/li&gt;
+  &lt;li&gt;Landscape&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;User is supposed to select a category to display all related images.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/post_assets/2018-07-22-imageclassification_img1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;dataset&quot;&gt;Dataset&lt;/h4&gt;
+&lt;p&gt;For each of the 5 categories, I collected the images from Google Search. These are the number of images I collected, and labels for each category. The total dataset comprised around 8000 images.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Class&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Label&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;No of Images&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Indoor&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Outdoor&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2476&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Night&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1143&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Day&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1689&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Landscape&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;transfer-learning&quot;&gt;Transfer Learning&lt;/h4&gt;
+&lt;p&gt;The classifier used is Convolutional Neural Network. I have used VGG Places CNN to extract features from Images. Here is the architecture of this Network.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Layer&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Dimension&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Data (input)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,3,224,224&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv1_1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,64,224,224&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv1_2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,64,224,224&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;pool1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,64,112,112&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv2_1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,128,112,112&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv2_2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,128,112,112&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;pool2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,128,56,56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv3_1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,256,56,56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv3_2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,256,56,56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv3_3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,256,56,56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;pool3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,256,28,28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv4_1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,28,28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv4_2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,28,28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv4_3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,28,28&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;pool4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,14,14&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv5_1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,14,14&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv5_2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,14,14&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;conv5_3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,14,14&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;pool5&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,512,7,7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;fc6&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,4096&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;fc7&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;50,4096&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I have plugged a Softmax classifier as the last layer in the above network. This layer takes in fc7 Features  from the previous layer and outputs five probabilities corresponding each category.&lt;/p&gt;
+
+&lt;h5 id=&quot;training&quot;&gt;Training&lt;/h5&gt;
+&lt;p&gt;The last layer comprising Softmax Classifier is trained on 70% of the dataset. The remaining 30% is used for testing purpose.&lt;/p&gt;
+&lt;h5 id=&quot;testing&quot;&gt;Testing&lt;/h5&gt;
+&lt;p&gt;87.5% Images are correctly classified among the test set. Following is the confusion matrix for classifications on the test set.&lt;/p&gt;
+
+&lt;p&gt;To see how the classifier is performing on unseen data, here is a video showing the classification on unseen images neither part of test or train set.&lt;/p&gt;
+
+&lt;div class=&quot;embed-container&quot;&gt;
+  &lt;iframe width=&quot;640&quot; height=&quot;480&quot; src=&quot;https://drive.google.com/file/d/17XXLWoamNV55NL21OH8fhpM9G8vOK5Q5/preview&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; autoplay=&quot;1&quot;&gt;
   &lt;/iframe&gt;
 &lt;/div&gt;</content><author><name>Farah Saeed</name><email>farahsaeedsiddiqi@gmail.com</email></author><summary type="html"></summary></entry></feed>

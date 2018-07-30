@@ -289,12 +289,197 @@
   width: 100%;
   height: 100%;
 }
+
+
+.page__content {
+
+font-size: 70%;
+}
+h4
+{
+font-size: 150%;
+}
+h5
+{
+font-size: 100%;
+}
 </style>
 
 <div class="embed-container">
   <iframe width="640" height="480" src="https://drive.google.com/file/d/1IzALr7F8JBIUMTMUPOaftwQxJ1R7R3si/preview" frameborder="0" allowfullscreen="" autoplay="1">
   </iframe>
 </div>
+
+<p>Hi Guys, Hope you’re all doing great.</p>
+
+<p>Above video shows Image Classification task accomplished using Convolutional Neural Network. In this post, I’ll be going through the entire process I have adopted to accomplish task.</p>
+
+<h4 id="goal">Goal</h4>
+<p>The Goal is to classify images among the following 5 categories:</p>
+<ul>
+  <li>Indoor</li>
+  <li>Outdoor</li>
+  <li>Night</li>
+  <li>Day</li>
+  <li>Landscape</li>
+</ul>
+
+<p>User is supposed to select a category to display all related images.</p>
+
+<p><img src="/assets/post_assets/2018-07-22-imageclassification_img1.jpg" alt="" /></p>
+
+<h4 id="dataset">Dataset</h4>
+<p>For each of the 5 categories, I collected the images from Google Search. These are the number of images I collected, and labels for each category. The total dataset comprised around 8000 images.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Class</th>
+      <th style="text-align: center">Label</th>
+      <th style="text-align: center">No of Images</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Indoor</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">2200</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Outdoor</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">2476</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Night</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1143</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Day</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">1689</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Landscape</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">588</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="transfer-learning">Transfer Learning</h4>
+<p>The classifier used is Convolutional Neural Network. I have used VGG Places CNN to extract features from Images. Here is the architecture of this Network.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Layer</th>
+      <th style="text-align: left">Dimension</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Data (input)</td>
+      <td style="text-align: left">50,3,224,224</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv1_1</td>
+      <td style="text-align: left">50,64,224,224</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv1_2</td>
+      <td style="text-align: left">50,64,224,224</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pool1</td>
+      <td style="text-align: left">50,64,112,112</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv2_1</td>
+      <td style="text-align: left">50,128,112,112</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv2_2</td>
+      <td style="text-align: left">50,128,112,112</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pool2</td>
+      <td style="text-align: left">50,128,56,56</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv3_1</td>
+      <td style="text-align: left">50,256,56,56</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv3_2</td>
+      <td style="text-align: left">50,256,56,56</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv3_3</td>
+      <td style="text-align: left">50,256,56,56</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pool3</td>
+      <td style="text-align: left">50,256,28,28</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv4_1</td>
+      <td style="text-align: left">50,512,28,28</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv4_2</td>
+      <td style="text-align: left">50,512,28,28</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv4_3</td>
+      <td style="text-align: left">50,512,28,28</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pool4</td>
+      <td style="text-align: left">50,512,14,14</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv5_1</td>
+      <td style="text-align: left">50,512,14,14</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv5_2</td>
+      <td style="text-align: left">50,512,14,14</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">conv5_3</td>
+      <td style="text-align: left">50,512,14,14</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">pool5</td>
+      <td style="text-align: left">50,512,7,7</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fc6</td>
+      <td style="text-align: left">50,4096</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">fc7</td>
+      <td style="text-align: left">50,4096</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I have plugged a Softmax classifier as the last layer in the above network. This layer takes in fc7 Features  from the previous layer and outputs five probabilities corresponding each category.</p>
+
+<h5 id="training">Training</h5>
+<p>The last layer comprising Softmax Classifier is trained on 70% of the dataset. The remaining 30% is used for testing purpose.</p>
+<h5 id="testing">Testing</h5>
+<p>87.5% Images are correctly classified among the test set. Following is the confusion matrix for classifications on the test set.</p>
+
+<p>To see how the classifier is performing on unseen data, here is a video showing the classification on unseen images neither part of test or train set.</p>
+
+<div class="embed-container">
+  <iframe width="640" height="480" src="https://drive.google.com/file/d/17XXLWoamNV55NL21OH8fhpM9G8vOK5Q5/preview" frameborder="0" allowfullscreen="" autoplay="1">
+  </iframe>
+</div>
+
 
         
       </section>
