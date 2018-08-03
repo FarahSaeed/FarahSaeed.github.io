@@ -90,7 +90,7 @@ For each of the 5 categories, I collected the images from Google Search. These a
 
 
 #### Transfer Learning
-The classifier used is Convolutional Neural Network. I have used VGG Places CNN to extract features from Images. Here is the architecture of this Network.
+The classifier used is Convolutional Neural Network. I have used [VGG Places CNN](http://places.csail.mit.edu/downloadCNN.html) to extract features from Images. Here is the architecture of this Network.
 
 
 |Layer			|Dimension			 |
@@ -124,6 +124,8 @@ I have plugged a Softmax classifier as the last layer in the above network. This
 The last layer comprising Softmax Classifier is trained on 70% of the dataset. The remaining 30% is used for testing purpose. 
 ##### Testing
 87.5% Images are correctly classified among the test set. Following is the confusion matrix for classifications on the test set.
+
+![](/assets/post_assets/2018-07-22-imageclassification_img2.png)
 
 To see how the classifier is performing on unseen data, here is a video showing the classification on unseen images neither part of test or train set.
 
