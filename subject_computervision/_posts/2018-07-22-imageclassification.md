@@ -125,7 +125,7 @@ The last layer comprising Softmax Classifier is trained on 70% of the dataset. T
 ##### Testing
 87.5% Images are correctly classified among the test set. Following is the confusion matrix for classifications on the test set.
 
-![](/assets/post_assets/2018-07-22-imageclassification_img2.png)
+![](/assets/post_assets/2018-07-22-imageclassification_img2.PNG)
 
 To see how the classifier is performing on unseen data, here is a video showing the classification on unseen images neither part of test or train set.
 

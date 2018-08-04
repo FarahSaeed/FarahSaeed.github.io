@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-08-03T13:43:44+05:00</updated><id>/</id><title type="html">Farah Saeed</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Farah Saeed</name><email>farahsaeedsiddiqi@gmail.com</email></author><entry><title type="html">Image Classification</title><link href="/ComputerVision/" rel="alternate" type="text/html" title="Image Classification" /><published>2018-07-22T00:00:00+05:00</published><updated>2018-07-22T00:00:00+05:00</updated><id>/imageclassification</id><content type="html" xml:base="/ComputerVision/">&lt;style&gt; 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-08-04T08:14:12+05:00</updated><id>/</id><title type="html">Farah Saeed</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>Farah Saeed</name><email>farahsaeedsiddiqi@gmail.com</email></author><entry><title type="html">Image Classification</title><link href="/ComputerVision/" rel="alternate" type="text/html" title="Image Classification" /><published>2018-07-22T00:00:00+05:00</published><updated>2018-07-22T00:00:00+05:00</updated><id>/imageclassification</id><content type="html" xml:base="/ComputerVision/">&lt;style&gt; 
 
 .embed-container {
   position: relative;
@@ -199,7 +199,7 @@ font-size: 100%;
 &lt;h5 id=&quot;testing&quot;&gt;Testing&lt;/h5&gt;
 &lt;p&gt;87.5% Images are correctly classified among the test set. Following is the confusion matrix for classifications on the test set.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/post_assets/2018-07-22-imageclassification_img2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/post_assets/2018-07-22-imageclassification_img2.PNG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To see how the classifier is performing on unseen data, here is a video showing the classification on unseen images neither part of test or train set.&lt;/p&gt;
 
