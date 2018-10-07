@@ -11,7 +11,7 @@ defaults:
       share: true
       related: true
 title:  "Image Classification"
-date:   2018-07-22
+date:   2018-10-07
 permalink: /ComputerVision/
 ---
 

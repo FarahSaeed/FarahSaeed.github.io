@@ -1,0 +1,3 @@
+cd documents/github/website/farahsaeed.github.io
+
+JEKYLL_ENV=production bundle exec jekyll serve
