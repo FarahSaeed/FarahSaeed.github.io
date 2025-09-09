@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEPM (CS 331) — Software Engineering & Project Management</title>
+  <meta name="description" content="Course website for CS 331: Software Engineering & Project Management (SEPM)" />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827dd;   /* gray-900 w/ alpha */
+      --card:#0b1224;      /* deep panel */
+      --accent:#22d3ee;    /* cyan-400 */
+      --accent2:#a78bfa;   /* violet-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#94a3b8;     /* slate-400 */
+      --ring:#334155;      /* slate-700 */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, #1f293799, transparent),
+                           radial-gradient(1000px 500px at 110% 10%, #1e293b99, transparent),
+                           linear-gradient(180deg,#0b1020,#0a0f1d 50%, #060a15);
+    }
+    header{
+      position:relative; padding:64px 20px 36px; overflow:hidden;
+      background:
+        radial-gradient(1200px 400px at 70% -10%, #22d3ee22, transparent),
+        radial-gradient(900px 500px at -10% 0%, #a78bfa22, transparent);
+      border-bottom:1px solid #1f2937;
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:0 16px}
+    .title{
+      display:flex; flex-wrap:wrap; align-items:flex-end; gap:14px;
+    }
+    h1{
+      margin:0; font-size:clamp(28px,4vw,42px); line-height:1.1;
+      background: linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      font-weight:800;
+    }
+    .subtitle{color:var(--muted); font-size:clamp(14px,2.2vw,16px)}
+    nav{
+      margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;
+    }
+    nav a{
+      text-decoration:none; color:var(--text); font-weight:600;
+      padding:10px 14px; border:1px solid var(--ring); border-radius:10px;
+      background-color:#0b1224aa; backdrop-filter: blur(4px);
+    }
+    nav a:hover{border-color:var(--accent); box-shadow:0 0 0 2px #22d3ee22 inset}
+
+    .grid{
+      display:grid; gap:16px; margin-top:22px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+    .card{
+      background:linear-gradient(180deg,#0b1224,#0a1022);
+      border:1px solid var(--ring); border-radius:14px; padding:16px;
+      box-shadow:0 10px 30px #00000055;
+    }
+    .card h3{margin:0 0 8px 0; font-size:18px}
+    .meta{color:var(--muted); font-size:14px; line-height:1.5}
+    .badge{display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid var(--ring); color:var(--muted)}
+    .accent{color:var(--accent)}
+    .accent2{color:var(--accent2)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+
+    section{padding:46px 0; border-top:1px solid #1f2937}
+    section h2{margin:0 0 14px 0; font-size:26px}
+    .table{
+      width:100%; border-collapse:separate; border-spacing:0;
+      border:1px solid var(--ring); border-radius:12px; overflow:hidden;
+    }
+    .table th,.table td{padding:12px 14px; border-bottom:1px solid #1f2937}
+    .table th{background:#0d152b; text-align:left}
+    .table tr:last-child td{border-bottom:none}
+    details{
+      border:1px solid var(--ring); border-radius:12px; padding:14px 16px; background:#0b1224;
+    }
+    details+details{margin-top:10px}
+    details summary{cursor:pointer; font-weight:700}
+    a.link{color:var(--accent); text-decoration:none}
+    a.link:hover{text-decoration:underline}
+    footer{padding:28px 16px; color:var(--muted); border-top:1px solid #1f2937; text-align:center}
+    /* small helper chips */
+    .chip{display:inline-block; padding:2px 8px; border:1px solid var(--ring); border-radius:999px; font-size:12px; color:var(--muted); margin-left:6px}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="title">
+      <h1>CS 331 — Software Engineering & Project Management (SEPM)</h1>
+      <span class="chip">Fall</span>
+    </div>
+    <p class="subtitle">Instructor: <strong>You</strong> &middot; Office: <span class="mono">S18</span> &middot; Office Hours: <strong>Tues & Wed, 10:00–11:00</strong></p>
+
+    <nav aria-label="Primary Navigation">
+      <a href="#overview">Overview</a>
+      <a href="#schedule">Class Schedule</a>
+      <a href="#slides">Lecture Slides</a>
+      <a href="#project">Project</a>
+      <a href="#policies">Policies</a>
+    </nav>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card">
+        <h3>Meeting Times</h3>
+        <p class="meta">
+          <strong>Mon</strong> — 3:30 PM (<span class="mono">LH 7</span>)<br/>
+          <strong>Tues</strong> — 8:00 AM (<span class="mono">LH 8</span>)<br/>
+          <strong>Wed</strong> — 8:00 AM (<span class="mono">LH 8</span>)
+        </p>
+      </div>
+      <div class="card">
+        <h3>Contact & Hours</h3>
+        <p class="meta">Office: <span class="mono">S18</span><br/>
+          Office Hours: <strong>Tues & Wed, 10:00–11:00</strong><br/>
+          Email: <a class="link" href="mailto:you@example.edu">you@example.edu</a></p>
+      </div>
+      <div class="card">
+        <h3>Quick Links</h3>
+        <p class="meta">
+          <a class="link" href="#slides">📑 Slides</a> &middot;
+          <a class="link" href="#project">🧪 Project Brief</a> &middot;
+          <a class="link" href="#policies">📘 Policies</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="overview" aria-labelledby="overview-title">
+    <h2 id="overview-title">Overview</h2>
+    <p class="meta">
+      SEPM (CS 331) blends <em>software engineering</em> practices—requirements, architecture, testing, CI/CD—with
+      <em>project management</em> fundamentals—planning, estimation, risk, and team coordination. Students will
+      complete a team project that simulates an industry workflow with modern tooling.
+    </p>
+  </section>
+
+  <section id="schedule" aria-labelledby="schedule-title">
+    <h2 id="schedule-title">Class Schedule & Locations</h2>
+    <table class="table" role="table" aria-label="Class times and rooms">
+      <thead><tr><th>Day</th><th>Time</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr><td>Monday</td><td>3:30 PM</td><td>LH 7</td></tr>
+        <tr><td>Tuesday</td><td>8:00 AM</td><td>LH 8</td></tr>
+        <tr><td>Wednesday</td><td>8:00 AM</td><td>LH 8</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:20px">Office Hours</h3>
+    <p class="meta">Tues & Wed, 10:00–11:00 — Office <span class="mono">S18</span></p>
+  </section>
+
+  <section id="slides" aria-labelledby="slides-title">
+    <h2 id="slides-title">Lecture Slides</h2>
+
+    <!-- Replace the # links below with your actual slide URLs (e.g., Google Drive/OneDrive/GitHub) -->
+    <details open>
+      <summary>Week 1 — Introduction & SE vs PM</summary>
+      <ul>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 1.1 — Course Intro</a></li>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 1.2 — SE & PM Basics</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Week 2 — Software Process Models: Waterfall & Incremental</summary>
+      <ul>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 2.1 — Waterfall Model</a></li>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 2.2 — Incremental Development</a></li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Week 3 — Requirements & User Stories</summary>
+      <ul>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 3.1 — Requirements Engineering</a></li>
+        <li><a class="link" href="#" target="_blank" rel="noopener">Slides 3.2 — User Stories & Backlogs</a></li>
+      </ul>
+    </details>
+
+    <p class="meta" style="margin-top:10px">Add more weeks as the semester progresses.</p>
+  </section>
+
+  <section id="project" aria-labelledby="project-title">
+    <h2 id="project-title">Course Project</h2>
+
+    <div class="card" style="margin-bottom:12px">
+      <h3>Overview</h3>
+      <p class="meta">
+        Teams will design, implement, test, and deliver a small software product over multiple iterations.
+        You are expected to practice requirements elicitation, architectural design, version control,
+        automated testing, and continuous integration. Weekly sprint reviews will track progress.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Milestones</h3>
+        <ol class="meta" style="margin:0; padding-left:18px">
+          <li>Problem Statement & Requirements (Week 3)</li>
+          <li>Architecture & Initial Prototype (Week 5)</li>
+          <li>Iteration 1 — Core Features + Tests (Week 8)</li>
+          <li>Iteration 2 — Extensions + CI (Week 11)</li>
+          <li>Final Demo & Report (Week 14)</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Deliverables</h3>
+        <ul class="meta" style="margin:0; padding-left:18px">
+          <li>Team repo (GitHub) with Issues/Boards</li>
+          <li>Design document (architecture & rationale)</li>
+          <li>Automated test suite & CI configuration</li>
+          <li>Demo video (5–7 min) + Final report</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <ul class="meta" style="margin:0; padding-left:18px">
+          <li><a class="link" href="#" target="_blank">Project Brief (PDF)</a></li>
+          <li><a class="link" href="#" target="_blank">Grading Rubric</a></li>
+          <li><a class="link" href="#" target="_blank">Starter Repo / Template</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="policies" aria-labelledby="policies-title">
+    <h2 id="policies-title">Policies (Short Version)</h2>
+    <ul class="meta">
+      <li><strong>Attendance:</strong> Recommended for success in team-based work.</li>
+      <li><strong>Late Work:</strong> Standard deduction unless prior approval.</li>
+      <li><strong>Academic Integrity:</strong> Follow university guidelines. Cite sources, document AI-assisted work.</li>
+      <li><strong>Accessibility:</strong> Contact the instructor for accommodations.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="y"></span> CS 331 — SEPM · Instructor: You · Office S18
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
