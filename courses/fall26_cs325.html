@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CS 325 — Software Engineering (Fall 2026)</title>
+  <meta name="description" content="Course website for CS 331: Software Engineering & Project Management (SEPM)" />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827dd;   /* gray-900 w/ alpha */
+      --card:#0b1224;      /* deep panel */
+      --accent:#22d3ee;    /* cyan-400 */
+      --accent2:#a78bfa;   /* violet-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#94a3b8;     /* slate-400 */
+      --ring:#334155;      /* slate-700 */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, #1f293799, transparent),
+                           radial-gradient(1000px 500px at 110% 10%, #1e293b99, transparent),
+                           linear-gradient(180deg,#0b1020,#0a0f1d 50%, #060a15);
+    }
+    header{
+      position:relative; padding:64px 20px 36px; overflow:hidden;
+      background:
+        radial-gradient(1200px 400px at 70% -10%, #22d3ee22, transparent),
+        radial-gradient(900px 500px at -10% 0%, #a78bfa22, transparent);
+      border-bottom:1px solid #1f2937;
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:0 16px}
+    .title{
+      display:flex; flex-wrap:wrap; align-items:flex-end; gap:14px;
+    }
+    h1{
+      margin:0; font-size:clamp(28px,4vw,42px); line-height:1.1;
+      background: linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      font-weight:800;
+    }
+    .subtitle{color:var(--muted); font-size:clamp(14px,2.2vw,16px)}
+    nav{
+      margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;
+    }
+    nav a{
+      text-decoration:none; color:var(--text); font-weight:600;
+      padding:10px 14px; border:1px solid var(--ring); border-radius:10px;
+      background-color:#0b1224aa; backdrop-filter: blur(4px);
+    }
+    nav a:hover{border-color:var(--accent); box-shadow:0 0 0 2px #22d3ee22 inset}
+
+    .grid{
+      display:grid; gap:16px; margin-top:22px;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
+    .card{
+      background:linear-gradient(180deg,#0b1224,#0a1022);
+      border:1px solid var(--ring); border-radius:14px; padding:16px;
+      box-shadow:0 10px 30px #00000055;
+    }
+    .card h3{margin:0 0 8px 0; font-size:18px}
+    .meta{color:var(--muted); font-size:14px; line-height:1.5}
+    .badge{display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; border:1px solid var(--ring); color:var(--muted)}
+    .accent{color:var(--accent)}
+    .accent2{color:var(--accent2)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+
+    section{padding:46px 0; border-top:1px solid #1f2937}
+    section h2{margin:0 0 14px 0; font-size:26px}
+    .table{
+      width:100%; border-collapse:separate; border-spacing:0;
+      border:1px solid var(--ring); border-radius:12px; overflow:hidden;
+    }
+    .table th,.table td{padding:12px 14px; border-bottom:1px solid #1f2937}
+    .table th{background:#0d152b; text-align:left}
+    .table tr:last-child td{border-bottom:none}
+    details{
+      border:1px solid var(--ring); border-radius:12px; padding:14px 16px; background:#0b1224;
+    }
+    details+details{margin-top:10px}
+    details summary{cursor:pointer; font-weight:700}
+    a.link{color:var(--accent); text-decoration:none}
+    a.link:hover{text-decoration:underline}
+    footer{padding:28px 16px; color:var(--muted); border-top:1px solid #1f2937; text-align:center}
+    /* small helper chips */
+    .chip{display:inline-block; padding:2px 8px; border:1px solid var(--ring); border-radius:999px; font-size:12px; color:var(--muted); margin-left:6px}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="title">
+      <h1>CS 325 — Software Engineering</h1>
+      <span class="chip">Fall</span>
+    </div>
+    <p class="subtitle">Instructor: <strong>You</strong> &middot; Office: <span class="mono">S18</span> &middot; Office Hours: <strong>Tues & Wed, 10:00–11:00</strong></p>
+
+    <nav aria-label="Primary Navigation">
+      <a href="#overview">Overview</a>
+      <a href="#schedule">Class Schedule</a>
+      <a href="#slides">Lecture Slides</a>
+      <a href="#project">Project</a>
+      <a href="#policies">Policies</a>
+    </nav>
+
+    <div class="grid" style="margin-top:18px">
+      <div class="card">
+        <h3>Meeting Times <span class="badge">Tentative</span></h3>
+        <p class="meta">
+          <strong>Mon</strong> — 3:30 PM (<span class="mono">LH 7</span>)<br/>
+          <strong>Tues</strong> — 8:00 AM (<span class="mono">LH 8</span>)<br/>
+          <strong>Wed</strong> — 8:00 AM (<span class="mono">LH 8</span>)
+        </p>
+		
+      </div>
+      <div class="card">
+        <h3>Contact & Hours</h3>
+        <p class="meta"><!--Office: <span class="mono">S18</span><br/>-->
+          Office Hours: <strong>Tues & Wed, 10:00–11:00</strong><br/>
+          Email: <a class="link" href="mailto:you@example.edu">you@example.edu</a></p>
+      </div>
+	  <p class="meta">
+Class meeting times, classroom locations, and office hours are tentative and subject to change.
+</p>
+      <div class="card">
+        <h3>Quick Links</h3>
+        <p class="meta">
+          <a class="link" href="#slides">📑 Slides</a> &middot;
+          <a class="link" href="#project">🧪 Project Brief</a> &middot;
+          <a class="link" href="#policies">📘 Policies</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="overview" aria-labelledby="overview-title">
+<h2 id="overview-title">Overview</h2>
+
+<p class="meta">
+This course introduces the principles and practices of  software engineering,
+including requirements engineering, software architecture, design, implementation,
+testing, DevOps, and collaborative software development. Students should work on a
+semester long project utilzing the software engineering principles.
+
+The course also explores the role of generative AI in software engineering,
+including agentic coding, spec driven development, and AI-assisted testing.
+</p>
+  </section>
+
+  <section id="schedule" aria-labelledby="schedule-title">
+    <h2 id="schedule-title">Class Schedule & Locations</h2>
+	<p class="meta">
+The class schedule, meeting times, and classroom locations are tentative and may change.
+</p>
+    <table class="table" role="table" aria-label="Class times and rooms">
+      <thead><tr><th>Day</th><th>Time</th><th>Location</th></tr></thead>
+<tbody>
+<tr><td>Monday</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>Tuesday</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>Wednesday</td><td>TBD</td><td>TBD</td></tr>
+</tbody>
+    </table>
+
+    <h3 style="margin-top:20px">Office Hours</h3>
+    <p class="meta">Tues & Wed, 10:00–11:00 — Office <span class="mono">S18</span></p>
+  </section>
+
+  <section id="slides" aria-labelledby="slides-title">
+    <h2 id="slides-title">Course Outline</h2>
+
+    <!-- Replace the # links below with your actual slide URLs (e.g., Google Drive/OneDrive/GitHub) -->
+    <details open>
+<summary>Weeks 1–3: Foundations of Software Engineering</summary>
+<ul>
+<li>Software engineering principles and lifecycle models</li>
+<li>Requirements engineering and user stories</li>
+<li>Software architecture, design principles, UML, and design patterns</li>
+</ul>
+</details>
+
+<details>
+<summary>Weeks 4–6: Development Practices</summary>
+<ul>
+<li>Object-oriented design and principles</li>
+<li>Git workflows, collaboration, code reviews</li>
+<li>Clean code, refactoring, documentation, coding standards</li>
+</ul>
+</details>
+
+<details>
+<summary>Week 7: Generative AI for Software Engineering</summary>
+<ul>
+<li>Agentic coding and AI development environments</li>
+<li>Spec driven development</li>
+</ul>
+</details>
+
+<details>
+<summary>Weeks 8–10: Testing, DevOps, and Quality</summary>
+<ul>
+<li>Software testing and AI-assisted test generation</li>
+<li>CI/CD pipelines and deployment automation</li>
+<li>Security, performance, and software quality assurance</li>
+</ul>
+</details>
+
+<details>
+<summary>Weeks 11–15: Project Development and Emerging Topics</summary>
+<ul>
+<li>Project management and agile development</li>
+<li>Project midterm presentation (Week 9)</li>
+<li>Final project integration and deployment</li>
+<li>Emerging trends in software engineering and AI</li>
+</ul>
+</details>
+    <p class="meta" style="margin-top:10px">Add more weeks as the semester progresses.</p>
+  </section>
+
+  <section id="project" aria-labelledby="project-title">
+    <h2 id="project-title">Course Project</h2>
+
+    <div class="card" style="margin-bottom:12px">
+      <h3>Overview</h3>
+      <p class="meta">
+        Teams will design, implement, test, and deliver a small software product over multiple iterations.
+        You are expected to practice requirements elicitation, architectural design, version control,
+        automated testing, and continuous integration. Weekly sprint reviews will track progress.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Milestones</h3>
+        <ol class="meta" style="margin:0; padding-left:18px">
+          <li>Project Proposal & Requirements (Week 3)</li>
+          <li>Architecture & Initial Prototype (Week 5)</li>
+          <li>Iteration 1 — Core Features + Tests (Week 8)</li>
+          <li>Iteration 2 — Extensions + CI (Week 11)</li>
+          <li>Final Demo & Report (Week 14)</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Deliverables</h3>
+        <ul class="meta" style="margin:0; padding-left:18px">
+          <li>Team repo (GitHub) with Issues/Boards</li>
+          <li>Design document (architecture & rationale)</li>
+          <li>Automated test suite & CI configuration</li>
+          <li>Demo video (5–7 min) + Final report</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Resources</h3>
+        <ul class="meta" style="margin:0; padding-left:18px">
+          <li><a class="link" href="#" target="_blank">Project Brief (PDF)</a></li>
+          <li><a class="link" href="#" target="_blank">Grading Rubric</a></li>
+          <li><a class="link" href="#" target="_blank">Starter Repo / Template</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="policies" aria-labelledby="policies-title">
+    <h2 id="policies-title">Policies (Short Version)</h2>
+    <ul class="meta">
+      <li><strong>Attendance:</strong> Recommended for success in team-based work.</li>
+      <li><strong>Late Work:</strong> Standard deduction unless prior approval.</li>
+      <li><strong>Academic Integrity:</strong> Follow university guidelines. Cite sources, document AI-assisted work.</li>
+      <li><strong>Accessibility:</strong> Contact the instructor for accommodations.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="y"></span> CS325 — Software Engineering · Fall 2026 · Instructor: Farah Saeed
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
